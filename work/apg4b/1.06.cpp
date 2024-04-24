@@ -1,37 +1,24 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int main() {
     int A, B;
     string op;
     cin >> A >> op >> B;
 
-    if (op == "+")
-    {
+    if (op == "+") {
         cout << A + B << endl;
-    }
-    else if (op == "-")
-    {
+    } else if (op == "-") {
         cout << A - B << endl;
-    }
-    else if (op == "*")
-    {
+    } else if (op == "*") {
         cout << A * B << endl;
-    }
-    else if (op == "/")
-    {
-        if (B == 0)
-        {
+    } else if (op == "/") {
+        if (B == 0) {
             cout << "error" << endl;
-        }
-        else
-        {
+        } else {
             cout << A / B << endl;
         }
-    }
-    else
-    {
+    } else {
         cout << "error" << endl;
     }
 }
