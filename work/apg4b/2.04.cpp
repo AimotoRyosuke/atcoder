@@ -5,10 +5,12 @@ using namespace std;
 void saiten(vector<vector<int>> &A, int &correct_count, int &wrong_count) {
     for (int i = 0; i < A.size(); i++) {
         for (int j = 0; j < A.at(i).size(); j++) {
-            if (A.at(i).at(j) == (i + 1) * (j + 1)) {
+            // 積
+            int product = (i + 1) * (j + 1);
+            if (A.at(i).at(j) == product) {
                 correct_count++;
             } else {
-                A.at(i).at(j) = (i + 1) * (j + 1);
+                A.at(i).at(j) = product;
                 wrong_count++;
             }
         }
