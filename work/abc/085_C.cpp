@@ -1,3 +1,5 @@
+// 総数が決まったfor文
+
 #include <bits/stdc++.h>
 using namespace std;
 
