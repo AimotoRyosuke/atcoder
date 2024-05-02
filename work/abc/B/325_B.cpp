@@ -20,5 +20,4 @@ int main() {
         }
         max_people = max(max_people, people);
     }
-    cout << max_people << endl;
 }
