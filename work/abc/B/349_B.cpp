@@ -22,14 +22,14 @@ int main() {
             break;
         }
     }
-    bool isGood = true;
+    bool is_good = true;
     for (int i = 0; i < kind.size(); i++) {
         if (kind.at(i) % 2 != 0) {
-            isGood = false;
+            is_good = false;
             break;
         }
     }
-    if (isGood)
+    if (is_good)
         cout << "Yes" << endl;
     else
         cout << "No" << endl;
