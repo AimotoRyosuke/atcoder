@@ -86,7 +86,7 @@ int main() {
                 return 0;
             }
             check(grid.at(i).at(j), reverse, r_target);
-            if (reverse == target) {
+            if (reverse == r_target) {
                 for (int k = 0; k < 5; k++) {
                     cout << i + 1 << " " << j + 1 - k << endl;
                 }
@@ -129,14 +129,14 @@ int main() {
             check(grid.at(y).at(x), forward, target);
             if (forward == target) {
                 for (int k = 0; k < 5; k++) {
-                    cout << y - 4 + k << " " << x - y + k << endl;
+                    cout << y + 4 - k + 1 << " " << x - 4 + k + 1 << endl;
                 }
                 return 0;
             }
             check(grid.at(y).at(x), reverse, r_target);
             if (reverse == r_target) {
                 for (int k = 0; k < 5; k++) {
-                    cout << y - k << " " << x - k << endl;
+                    cout << y + k + 1 << " " << x - k + 1 << endl;
                 }
                 return 0;
             }
