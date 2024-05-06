@@ -1,14 +1,6 @@
+// x^n+x^n=x^n+1
 #include <bits/stdc++.h>
 using namespace std;
-using ull = unsigned long long;
-
-ull multi(int base, int exponent) {
-    ull answer = 1;
-    for (int i = 0; i < exponent; i++) {
-        answer *= base;
-    }
-    return answer;
-}
 void check_A(vector<int> &A) {
     if (A.size() <= 1) {
         return;
