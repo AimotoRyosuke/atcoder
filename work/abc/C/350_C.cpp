@@ -28,6 +28,7 @@ int main() {
     }
 }
 
+// ver.1
 // int main() {
 //     int N;
 //     cin >> N;
