@@ -8,9 +8,10 @@ int main() {
     cin >> S;
     int Q;
     cin >> Q;
-    map<char, int> s_count;
-    for (auto s : S)
-        s_count[s]++;
+    map<char, vector<int>> s_index;
+    for (int i = 0; i < N; i++) {
+        s_index[S.at(i)].push_back(i);
+    }
     vector<vector<char>> CD(Q, vector<char>(2));
     for (auto &cd : CD)
         cin >> cd.at(0) >> cd.at(1);
@@ -18,15 +19,51 @@ int main() {
     for (int i = 0; i < (int)CD.size(); i++) {
         char c = CD.at(i).at(0);
         char d = CD.at(i).at(1);
-        if (c == d || s_count.count(c) == 0)
+        if (c == d || s_index[c].empty())
             continue;
-        for (auto &s : S)
-            if (s == c) {
-                s = d;
-                int c_count = s_count[c];
-                s_count[c] = 0;
-                s_count[d] += c_count;
-            }
+        vector<int> a(s_index[c].size() + s_index[d].size());
+        merge(s_index[d].begin(), s_index[d].end(), s_index[c].begin(),
+              s_index[c].end(), a.begin());
+        s_index[d] = a;
+        s_index[c] = {};
     }
-    cout << S << endl;
+    map<int, char> result_map;
+    for (auto index : s_index)
+        for (int j = 0; j < index.second.size(); j++)
+            result_map[index.second.at(j)] = index.first;
+    for (int i = 0; i < N; i++) {
+        cout << result_map[i];
+    }
+    cout << endl;
 }
+
+// ver 1（has TLE ERROR 20 / 29）
+// int main() {
+//     int N;
+//     cin >> N;
+//     string S;
+//     cin >> S;
+//     int Q;
+//     cin >> Q;
+//     map<char, int> s_count;
+//     for (auto s : S)
+//         s_count[s]++;
+//     vector<vector<char>> CD(Q, vector<char>(2));
+//     for (auto &cd : CD)
+//         cin >> cd.at(0) >> cd.at(1);
+
+//     for (int i = 0; i < (int)CD.size(); i++) {
+//         char c = CD.at(i).at(0);
+//         char d = CD.at(i).at(1);
+//         if (c == d || s_count.count(c) == 0)
+//             continue;
+//         for (auto &s : S)
+//             if (s == c) {
+//                 s = d;
+//                 int c_count = s_count[c];
+//                 s_count[c] = 0;
+//                 s_count[d] += c_count;
+//             }
+//     }
+//     cout << S << endl;
+// }
