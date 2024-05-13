@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# 引数argを受け取り、gccでコンパイルして実行して削除する
+# 引数argで検証ファイルを指定し、gccでコンパイルして実行して削除する
 arg=$1
 
 gcc -lstdc++ -o work $arg
