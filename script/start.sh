@@ -2,6 +2,6 @@
 
 arg=$1
 
-touch "${arg}_A.cpp"
-touch "${arg}_B.cpp"
-touch "${arg}_C.cpp"
+cp template.cpp "${arg}_A.cpp"
+cp template.cpp "${arg}_B.cpp"
+cp template.cpp "${arg}_C.cpp"
