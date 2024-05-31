@@ -93,7 +93,20 @@
         "numeric": "cpp",
         "type_traits": "cpp",
         "utility": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "*.tcc": "cpp",
+        "stacktrace": "cpp",
+        "chrono": "cpp",
+        "memory_resource": "cpp",
+        "random": "cpp",
+        "system_error": "cpp",
+        "format": "cpp",
+        "spanstream": "cpp",
+        "stdfloat": "cpp",
+        "stop_token": "cpp",
+        "syncstream": "cpp",
+        "thread": "cpp",
+        "__memory": "cpp"
     },
     "C_Cpp.clang_format_style": "{ BreakBeforeBraces: Attach, IndentWidth: 4 }",
 }
