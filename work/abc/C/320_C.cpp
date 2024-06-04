@@ -1,6 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int main() {
+    int M;
+    cin >> M;
+    string S1, S2, S3;
+    cin >> S1 >> S2 >> S3;
+    int ans = 301;
+    for (int i = 0; i < M * 3; i++) {
+        for (int j = 0; j < M * 3; j++) {
+            for (int k = 0; k < M * 3; k++) {
+                if (i == j)
+                    continue;
+                if (i == k)
+                    continue;
+                if (j == k)
+                    continue;
+                if (S1.at(i % M) != S2.at(j % M))
+                    continue;
+                if (S1.at(i % M) != S3.at(k % M))
+                    continue;
+                ans = min(ans, max(i, max(j, k)));
+            }
+        }
+    }
+    if (ans == 301)
+        ans = -1;
+    cout << ans << endl;
+}
+
 // WA 17/26
 // int main() {
 //     int M;
