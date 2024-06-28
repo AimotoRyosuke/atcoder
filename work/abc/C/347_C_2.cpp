@@ -10,7 +10,7 @@ int main() {
     vector<int> D(N);
     for (auto &d : D) {
         cin >> d;
-        d % W;
+        d = d % W;
     }
     sort(D.begin(), D.end());
     rep(i, N) D.push_back(D.at(i) + W);
@@ -21,12 +21,12 @@ int main() {
             break;
         }
     }
-    rep(i, N) {
-        int l = D.at(i), r = D.at(i + N - 1);
-        if (r - l + 1 <= A) {
-            ok = true;
-            break;
-        }
-    }
+    // rep(i, N) {
+    //     int l = D.at(i), r = D.at(i + N - 1);
+    //     if (r - l + 1 <= A) {
+    //         ok = true;
+    //         break;
+    //     }
+    // }
     cout << (ok ? "Yes" : "No") << endl;
 }
