@@ -6,7 +6,7 @@ int main() {
     string S;
     cin >> S;
     rep(i, S.size()) {
-        if (S.at(i) - 'A' > 0 && S.at(i) - 'A' < 26) {
+        if (S.at(i) - 'A' >= 0 && S.at(i) - 'A' < 26) {
             cout << i + 1 << endl;
             return 0;
         }
