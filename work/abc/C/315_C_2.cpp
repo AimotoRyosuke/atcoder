@@ -14,7 +14,6 @@ int main() {
     int ans = 0;
     rep(r, N) {
         auto al = A.at(l), ar = A.at(r);
-        pair<int, int> p = {al[0], ar[0]};
         if (l == r)
             continue;
         if (al[0] == ar[0]) {
@@ -22,7 +21,6 @@ int main() {
         } else {
             ans = max(ans, al[1] + ar[1]);
             l = r;
-            r--;
         }
     }
     cout << ans << '\n';
