@@ -6,7 +6,7 @@ using ull = unsigned long long;
 int main() {
     int K;
     cin >> K;
-    vector<int> ans;
+    vector<ull> ans;
     rep(s, 1 << 10) {
         ull x = 0;
         for (int i = 9; i >= 0; i--) {
