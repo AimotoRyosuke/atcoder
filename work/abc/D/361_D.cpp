@@ -24,22 +24,18 @@ int minMoves(const string &initial, const string &target) {
             return current.moves;
         }
 
+        int j = 0;
+        while (current.stones.at(j) != '.')
+            j++;
         for (int i = 0; i < N + 1; ++i) {
             if (current.stones[i] != '.' && current.stones[i + 1] != '.') {
-                for (int j = 0; j < N + 1; ++j) {
-                    if (current.stones[j] == '.' &&
-                        current.stones[j + 1] == '.') {
-                        string next = current.stones;
-                        next[j] = current.stones[i];
-                        next[j + 1] = current.stones[i + 1];
-                        next[i] = '.';
-                        next[i + 1] = '.';
+                string next = current.stones;
+                swap(next.at(i), next.at(j));
+                swap(next.at(i + 1), next.at(j + 1));
 
-                        if (visited.find(next) == visited.end()) {
-                            visited.insert(next);
-                            q.push({next, current.moves + 1});
-                        }
-                    }
+                if (visited.find(next) == visited.end()) {
+                    visited.insert(next);
+                    q.push({next, current.moves + 1});
                 }
             }
         }
