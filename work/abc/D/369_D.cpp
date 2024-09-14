@@ -14,7 +14,6 @@ int main() {
     dp[0][0] = 0;
     rep(i, N) {
         int ni = i + 1;
-        cout << "here" << '\n';
         rep(j, 2) {
             {
                 int nj = j ^ 1;
@@ -27,7 +26,6 @@ int main() {
             }
         }
     }
-    rep(i, N + 1) { cout << dp[i][0] << " " << dp[i][1] << '\n'; }
     ll ans = max(dp[N][0], dp[N][1]);
     cout << ans << '\n';
 }
